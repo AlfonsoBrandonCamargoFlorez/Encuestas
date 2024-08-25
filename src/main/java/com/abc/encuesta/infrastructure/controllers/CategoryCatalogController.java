@@ -43,7 +43,7 @@ public class CategoryCatalogController {
     @PostMapping
     public ResponseEntity<CategoriesCatalog> crearCategories(@RequestBody CategoriesCatalog categoriesCatalog) {
     
-        CategoriesCatalog categoriesUser = ICategoriesCatalog.save(categoriesCatalog);
+        ICategoriesCatalog.save(categoriesCatalog);
         return new ResponseEntity<>(categoriesCatalog, HttpStatus.CREATED);
     }
     
