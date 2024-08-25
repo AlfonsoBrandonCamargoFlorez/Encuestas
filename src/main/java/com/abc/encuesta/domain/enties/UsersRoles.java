@@ -17,6 +17,6 @@ public class UsersRoles {
 
     @ManyToOne
     private Roles roles;
-    //ola k 
+    //ola k ases
 
 }
