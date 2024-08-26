@@ -17,7 +17,7 @@ public class CategoriesCatalogAdapter implements ICategoryCatalog{
     private CategoriesCatalogRepository categoriesCatalogRepository;
 
     @Override
-    public Optional<CategoriesCatalog> findByid(Long id) {
+    public Optional<CategoriesCatalog> findById(Long id) {
        return categoriesCatalogRepository.findById(id);
     }
 

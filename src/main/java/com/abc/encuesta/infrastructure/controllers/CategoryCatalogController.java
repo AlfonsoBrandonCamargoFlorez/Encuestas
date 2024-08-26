@@ -36,7 +36,7 @@ public class CategoryCatalogController {
 
     @GetMapping("/{id}")
     public Optional<CategoriesCatalog> show(@PathVariable Long id) {
-        return ICategoriesCatalog.findByid(id);
+        return ICategoriesCatalog.findById(id);
     
     }
     
@@ -58,7 +58,7 @@ public class CategoryCatalogController {
     
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteCategories(@PathVariable Long id) {
-        if (ICategoriesCatalog.findByid(id).isPresent()) {
+        if (ICategoriesCatalog.findById(id).isPresent()) {
             ICategoriesCatalog.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
