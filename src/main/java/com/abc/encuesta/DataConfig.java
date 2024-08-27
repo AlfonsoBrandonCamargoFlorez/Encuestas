@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.abc.encuesta.domain.enties.CategoriesCatalog;
+import com.abc.encuesta.domain.entities.CategoriesCatalog;
 import com.abc.encuesta.infrastructure.repository.catalogcategories.CategoriesCatalogRepository;
 
 

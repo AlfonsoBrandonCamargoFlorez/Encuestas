@@ -1,4 +1,4 @@
-package com.abc.encuesta.domain.enties;
+package com.abc.encuesta.domain.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -13,21 +13,25 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Chapter {
-
+public class SubresponseOptions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Embedded 
+    @Embedded
     Audit audit = new Audit();
 
+    @Column (columnDefinition = "VARCHAR(255)", nullable = false)
+    private String component_html;
+
+    @Column (columnDefinition = "VARCHAR(255)", nullable = false)
+    private String subresponse_text;
+    
     @ManyToOne
-    private Surveys surveys;
+    private ResponseOptions responseOptions;
 
-    @Column(columnDefinition = "VARCHAR(50)", nullable = false)
-    private String chapter_title;
+    
 
-    @Column(columnDefinition = "VARCHAR(50)", nullable = false)
-    private String chapter_number;
+
+
 }

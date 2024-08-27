@@ -3,7 +3,7 @@ package com.abc.encuesta.application.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.abc.encuesta.domain.enties.ResponseOptions;
+import com.abc.encuesta.domain.entities.ResponseOptions;
 
 public interface IResponseOptions {
     //para encontrar//

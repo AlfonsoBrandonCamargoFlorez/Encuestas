@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.abc.encuesta.application.service.ICategoryCatalog;
-import com.abc.encuesta.domain.enties.CategoriesCatalog;
+import com.abc.encuesta.domain.entities.CategoriesCatalog;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

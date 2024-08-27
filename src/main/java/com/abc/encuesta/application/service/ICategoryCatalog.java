@@ -1,8 +1,9 @@
 package com.abc.encuesta.application.service;
 
-import com.abc.encuesta.domain.enties.CategoriesCatalog;
 import java.util.List;
 import java.util.Optional;
+
+import com.abc.encuesta.domain.entities.CategoriesCatalog;
 
 public interface ICategoryCatalog {
     //para encontrar//

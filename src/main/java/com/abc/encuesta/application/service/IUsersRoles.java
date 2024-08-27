@@ -3,7 +3,7 @@ package com.abc.encuesta.application.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.abc.encuesta.domain.enties.UsersRoles;
+import com.abc.encuesta.domain.entities.UsersRoles;
 
 public interface IUsersRoles {
     //para encontrar//

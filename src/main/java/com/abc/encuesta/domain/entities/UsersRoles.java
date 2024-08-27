@@ -1,6 +1,5 @@
-package com.abc.encuesta.domain.enties;
+package com.abc.encuesta.domain.entities;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,18 +11,16 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class ResponseQuestion {
+public class UsersRoles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    // Aquí va la relación de muchos a muchos entre Users y Roles
+    @ManyToOne
+    private Users users;
 
     @ManyToOne
-    private ResponseOptions responseOptions;
-
-    @ManyToOne
-    private SubresponseOptions subResponseOptions;
-
-    @Column (columnDefinition = "VARCHAR(80)", nullable = false)
-    private String responsetext;
+    private Roles roles;
+    //ola k ases
 
 }

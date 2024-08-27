@@ -2,9 +2,9 @@ package com.abc.encuesta.application.service;
 
 import java.util.Optional;
 
+import com.abc.encuesta.domain.entities.Chapter;
 
 import java.util.List;
-import com.abc.encuesta.domain.enties.Chapter;
 
 public interface IChapter {
     //para encontrar//

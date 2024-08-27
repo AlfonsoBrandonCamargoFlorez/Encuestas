@@ -3,7 +3,7 @@ package com.abc.encuesta.application.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.abc.encuesta.domain.enties.Users;
+import com.abc.encuesta.domain.entities.Users;
 
 public interface IUsers {
     //para encontrar//

@@ -1,4 +1,4 @@
-package com.abc.encuesta.domain.enties;
+package com.abc.encuesta.domain.entities;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.PrePersist;

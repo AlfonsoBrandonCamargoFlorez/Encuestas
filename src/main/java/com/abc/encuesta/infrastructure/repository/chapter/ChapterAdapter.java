@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.abc.encuesta.application.service.IChapter;
-import com.abc.encuesta.domain.enties.Audit;
-import com.abc.encuesta.domain.enties.Chapter;
+import com.abc.encuesta.domain.entities.Audit;
+import com.abc.encuesta.domain.entities.Chapter;
+
 import java.time.LocalDateTime;
 
 @Service
