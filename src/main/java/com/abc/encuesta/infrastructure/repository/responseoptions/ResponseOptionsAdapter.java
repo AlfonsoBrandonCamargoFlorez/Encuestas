@@ -41,8 +41,10 @@ public class ResponseOptionsAdapter implements IResponseOptions {
     public ResponseOptions update(Long id, ResponseOptions responseOptions) {
         return responseOptionsRepository.findById(id)
                 .map(existingResponseOption -> {
-                    // Mantener el createdAt existente
+                    // Actualizar los campos
                     existingResponseOption.setOption_text(responseOptions.getOption_text());
+                    existingResponseOption.setTypecomponenthtml(responseOptions.getTypecomponenthtml());
+                    existingResponseOption.setComment_response(responseOptions.getComment_response());
 
                     // Actualizar el campo updatedAt en el audit
                     Audit audit = existingResponseOption.getAudit();
