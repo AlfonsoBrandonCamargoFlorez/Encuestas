@@ -42,7 +42,7 @@ public class HandleExceptionController {
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
-
+//prueba
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorCustom> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
         ErrorCustom error = new ErrorCustom();
