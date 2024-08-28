@@ -33,7 +33,7 @@ public class RolesAdapter implements IRoles {
 
     
     @Override
-    public Optional<Roles> findByid(Long id) {
+    public Optional<Roles> findById(Long id) {
         return rolesRepository.findById(id);
     }
 

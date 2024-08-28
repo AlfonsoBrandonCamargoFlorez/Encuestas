@@ -7,7 +7,7 @@ import com.abc.encuesta.domain.entities.Roles;
 
 public interface IRoles {
     //para encontrar//
-    Optional<Roles> findByid(Long id);
+    Optional<Roles> findById(Long id);
 
     //para guardar//
     Roles save(Roles roles);
