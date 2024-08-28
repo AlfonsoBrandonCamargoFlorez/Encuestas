@@ -7,7 +7,7 @@ import com.abc.encuesta.domain.entities.Surveys;
 
 public interface ISurveys {
     //para encontrar//
-    Optional<Surveys> findByid(Long id);
+    Optional<Surveys> findById(Long id);
     
     //para guardar//
     Surveys save(Surveys surveys);
