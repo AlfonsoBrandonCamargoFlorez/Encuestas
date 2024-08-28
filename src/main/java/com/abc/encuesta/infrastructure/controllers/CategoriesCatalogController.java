@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/api/categories")
-public class CategoryCatalogController {
+public class CategoriesCatalogController {
     @Autowired
     private ICategoryCatalog ICategoriesCatalog;
 
