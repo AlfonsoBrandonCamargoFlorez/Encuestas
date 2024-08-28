@@ -31,21 +31,20 @@ public class RolesAdapter implements IRoles {
         return rolesRepository.findAll();
     }
 
-    // @Override
-
-    // public Roles update(Long id, Roles roles) {
-    //     return rolesRepository.findById(id)
-    //             .map(existingRoles -> {
-    //                 // Actualizar los campos relevantes
-    //                 existingRoles.setName(roles.getName());
-    //                 return rolesRepository.save(existingRoles);
-    //             })
-    //             .orElse(null);
-    // }
-
+    
     @Override
     public Optional<Roles> findByid(Long id) {
         return rolesRepository.findById(id);
     }
+
+    @Override
+    public Roles updade(Long id, Roles roles) {
+        return rolesRepository.findById(id)
+        .map(existingRoles -> {
+            // Actualizar los campos relevantes
+            existingRoles.setName(roles.getName());
+            return rolesRepository.save(existingRoles);
+        })
+        .orElse(null);}
 
 }

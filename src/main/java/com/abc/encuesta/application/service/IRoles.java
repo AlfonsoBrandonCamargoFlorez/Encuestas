@@ -18,4 +18,6 @@ public interface IRoles {
     //para listar todas//
     List<Roles> findAll();
 
+    Roles updade(Long id, Roles roles);
+
 }
