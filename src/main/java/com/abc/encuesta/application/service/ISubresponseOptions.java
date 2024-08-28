@@ -7,7 +7,7 @@ import com.abc.encuesta.domain.entities.SubresponseOptions;
 
 public interface ISubresponseOptions {
     //para encontrar//
-    Optional<SubresponseOptions> findByid(Long id);
+    Optional<SubresponseOptions> findById(Long id);
 
     //para guardar//
     SubresponseOptions save(SubresponseOptions subresponseOptions);
