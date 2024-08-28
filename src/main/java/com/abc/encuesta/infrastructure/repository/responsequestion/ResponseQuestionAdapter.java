@@ -44,9 +44,7 @@ public class ResponseQuestionAdapter implements IResponseQuestion {
                 .map(existingResponseQuestion -> {
                     // Actualizar los campos relevantes
                     existingResponseQuestion.setResponsetext(responseQuestion.getResponsetext());
-                   
-
-                    
+                                      
 
                     return responseQuestionRepository.save(existingResponseQuestion);
                 })
