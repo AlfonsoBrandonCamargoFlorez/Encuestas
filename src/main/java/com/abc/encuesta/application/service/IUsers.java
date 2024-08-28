@@ -7,7 +7,7 @@ import com.abc.encuesta.domain.entities.Users;
 
 public interface IUsers {
     //para encontrar//
-    Optional<Users> findByid(Long id);
+    Optional<Users> findById(Long id);
 
     //para guardar//
     Users save(Users users);
