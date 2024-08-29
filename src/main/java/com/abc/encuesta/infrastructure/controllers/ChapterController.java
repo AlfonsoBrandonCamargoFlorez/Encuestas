@@ -12,7 +12,7 @@ import com.abc.encuesta.application.service.IChapter; // Importar la interfaz co
 import com.abc.encuesta.domain.entities.Chapter;
 
 @RestController
-@RequestMapping("/api/chapters")
+@RequestMapping("/api/chapter")
 public class ChapterController {
 
     @Autowired
