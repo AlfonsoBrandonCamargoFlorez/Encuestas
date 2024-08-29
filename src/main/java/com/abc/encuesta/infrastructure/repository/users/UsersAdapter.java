@@ -42,6 +42,7 @@ public class UsersAdapter implements IUsers {
                 // Actualizar los campos relevantes
                 existingUsers.setUsername(users.getUsername());                
                 existingUsers.setPassword(users.getPassword());
+                existingUsers.setEnabled(users.getEnabled());
                 // Asegúrate de actualizar otros campos si es necesario
                 return usersRepository.save(existingUsers);
             })
