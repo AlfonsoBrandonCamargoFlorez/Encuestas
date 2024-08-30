@@ -14,7 +14,11 @@
     align-items: center;
     min-height: 100vh;
   }
-  
+ 
+  .service-item {
+      border: 1px solid black; /* Borde negro */
+      border-radius: 40px; /* Bordes redondeados */
+  }
   form {
     background: rgba(256, 256, 256, 0.4);
     color: #666;
@@ -35,7 +39,7 @@
   .mod-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px; /* Espacio entre columnas */
+    gap: 1px; /* Espacio entre columnas */
   }
   
   .mod-usuarios, .mod-encuestas {
@@ -51,7 +55,7 @@
     font-weight: bold;
     text-align: center; /* Centrar els texto de las etiquetas */
   }
-  /* yhgjhg */
+  
   input[type="submit"] {
     display: block;
     width: 100%;

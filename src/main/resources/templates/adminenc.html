@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Encuestas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/styleadmin.css}"> <!-- Incluye el nuevo CSS -->
     <script src="test.js" th:src="@{/test.js}" defer></script>
 </head>
+
 <body>
     <form id="survey-admin">
         <h2>- ADMIN-</h2>
 
         <div class="mod-container">
             <div class="mod-usuarios">
-                <label for="pseudo">Gestión de Usuarios</label>
+                <label for="pseudo">Usuarios</label>
                 <input type="submit" id="submit" value="CREAR">
                 <input type="submit" id="submit" value="ACTUALIZAR">
                 <input type="submit" id="submit" value="CONSULTAR">
@@ -23,10 +28,32 @@
             </div>
 
             <div class="mod-encuestas">
-                <label for="pseudo">Gestión de Encuestas</label>
+                <label for="pseudo">Encuestas</label>
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
+                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <p class="mb-0">Ecuesta</p>
+            </div>
+
+                <button data-bs-toggle="modal"> </button>
+                <input data-bs-toggle="modal" id="submit" value="ACTUALIZAR">
+                <input type="submit" id="submit" value="LISTAR TODOS">
+                <input type="submit" id="submit" value="ELIMINAR">
+                <span class="clear">x</span>
+            </div>
+
+            <div class="mod-encuestas">
+                <label for="pseudo">Capitulos</label>
                 <input type="submit" id="submit" value="CREAR">
                 <input type="submit" id="submit" value="ACTUALIZAR">
-                <input type="submit" id="submit" value="CONSULTAR">
+                <input type="submit" id="submit" value="LISTAR TODOS">
+                <input type="submit" id="submit" value="ELIMINAR">
+                <span class="clear">x</span>
+            </div>
+
+            <div class="mod-encuestas">
+                <label for="pseudo">Preguntas</label>
+                <input type="submit" id="submit" value="CREAR">
+                <input type="submit" id="submit" value="ACTUALIZAR">
                 <input type="submit" id="submit" value="LISTAR TODOS">
                 <input type="submit" id="submit" value="ELIMINAR">
                 <span class="clear">x</span>
@@ -38,6 +65,41 @@
             <span class="clear">x</span>
         </div>
     </form>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Encuesta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="nuevaEncuesta">
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Nombre de la encuesta:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Descripción de la encuesta:</label>
+                            <input type="text" id="description" name="description" class="form-control" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Crear encuesta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="test.js"></script>
 </body>
+
 </html>
