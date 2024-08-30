@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Encuestas</title>
+    <link rel="stylesheet" th:href="@{/styleadmin.css}"> <!-- Incluye el nuevo CSS -->
+    <script src="test.js" th:src="@{/test.js}" defer></script>
+</head>
+<body>
+    <form id="survey-admin">
+        <h2>- ADMIN-</h2>
+
+        <div class="mod-container">
+            <div class="mod-usuarios">
+                <label for="pseudo">Gestión de Usuarios</label>
+                <input type="submit" id="submit" value="CREAR">
+                <input type="submit" id="submit" value="ACTUALIZAR">
+                <input type="submit" id="submit" value="CONSULTAR">
+                <input type="submit" id="submit" value="LISTAR TODOS">
+                <input type="submit" id="submit" value="ELIMINAR">
+                <span class="clear">x</span>
+            </div>
+
+            <div class="mod-encuestas">
+                <label for="pseudo">Gestión de Encuestas</label>
+                <input type="submit" id="submit" value="CREAR">
+                <input type="submit" id="submit" value="ACTUALIZAR">
+                <input type="submit" id="submit" value="CONSULTAR">
+                <input type="submit" id="submit" value="LISTAR TODOS">
+                <input type="submit" id="submit" value="ELIMINAR">
+                <span class="clear">x</span>
+            </div>
+        </div>
+
+        <div class="salir">
+            <input type="submit" id="submit" value="SALIR">
+            <span class="clear">x</span>
+        </div>
+    </form>
+    <script src="test.js"></script>
+</body>
+</html>
