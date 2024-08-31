@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.disabled = true;
       
       const data = new FormData(this);
-      fetch(`/api/users?name=${encodeURIComponent(data.get('name'))}`, {
+      fetch(`/api/users/${encodeURIComponent(data.get('id'))}`, {
           method: 'GET'
       })
       .then(response => response.json())
@@ -63,11 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
       submitButton.disabled = true;
       
       const data = new FormData(this);
-      fetch('/api/users', {
+      fetch(`/api/users/${encodeURIComponent(data.get('id'))}`, {
           method: 'PUT',
           body: JSON.stringify({
-              id: data.get('id'),
-              username: data.get('name')
+              username: data.get('username'),
+              password: data.get('password'),
+              enabled: data.get('enabled') === 'true' // Convertir a Booleano
           }),
           headers: {
               'Content-Type': 'application/json'

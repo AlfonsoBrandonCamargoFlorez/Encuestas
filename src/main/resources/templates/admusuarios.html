@@ -70,58 +70,68 @@
         </div>
     </div>
 
-    <!-- Modal Buscar -->
-    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="searchModalLabel">Buscar Usuario</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="searchUserForm">
-                        <div class="mb-3">
-                            <label for="searchName" class="col-form-label">Nombre:</label>
-                            <input type="text" id="searchName" name="name" class="form-control" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Buscar Usuario</button>
-                        </div>
-                    </form>
-                </div>
+<!-- Modal Buscar -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="searchModalLabel">Buscar Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="searchUserForm">
+                    <div class="mb-3">
+                        <label for="searchId" class="col-form-label">ID del Usuario:</label>
+                        <input type="text" id="searchId" name="id" class="form-control" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Buscar Usuario</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Modal Actualizar -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updateModalLabel">Actualizar Usuario</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="updateUserForm">
-                        <div class="mb-3">
-                            <label for="updateId" class="col-form-label">ID del Usuario:</label>
-                            <input type="text" id="updateId" name="id" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateName" class="col-form-label">Nuevo Nombre:</label>
-                            <input type="text" id="updateName" name="name" class="form-control" required>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
-                        </div>
-                    </form>
-                </div>
+<!-- Modal Actualizar -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="updateModalLabel">Actualizar Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateUserForm">
+                    <div class="mb-3">
+                        <label for="updateId" class="col-form-label">ID del Usuario:</label>
+                        <input type="text" id="updateId" name="id" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateUsername" class="col-form-label">Nuevo Nombre de Usuario:</label>
+                        <input type="text" id="updateUsername" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updatePassword" class="col-form-label">Nueva Contraseña:</label>
+                        <input type="password" id="updatePassword" name="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateEnabled" class="col-form-label">Habilitado:</label>
+                        <select id="updateEnabled" name="enabled" class="form-control" required>
+                            <option value="true">Sí</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
+</div>
     <!-- Modal Eliminar -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">

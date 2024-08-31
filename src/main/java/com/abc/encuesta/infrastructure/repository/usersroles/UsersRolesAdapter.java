@@ -42,6 +42,7 @@ public class UsersRolesAdapter implements IUsersRoles {
                 // Actualizar los campos relevantes
                 
                 existingUsersRoles.setUsers(usersRoles.getUsers());
+                
                 // Asegúrate de actualizar otros campos si es necesario
                 return usersRolesRepository.save(existingUsersRoles);
             })
