@@ -15,8 +15,8 @@ public class iniciocotroller {
     }
 
     @GetMapping("/admin")
-    public String adminenc(Model model){
-        return "adminenc.html";
+    public String admin(Model model){
+        return "adm.html";
     }
 
     @GetMapping("/user")
@@ -36,12 +36,7 @@ public class iniciocotroller {
 
     @GetMapping("/admencuestas")
     public String encuesta(Model model){
-        return "encuestas.html";
-    }
-
-    @GetMapping("/admroles")
-    public String roles(Model model){
-        return "admroles.html";
+        return "admencuestas.html";
     }
 
     @GetMapping("/admusuarios")

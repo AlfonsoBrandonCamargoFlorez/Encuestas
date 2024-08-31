@@ -1,39 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"></html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <script src="test.js" th:src="@{/test.js}" defer></script>
+    <title>Gestion Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/styleadmin.css}"> <!-- Incluye el nuevo CSS -->
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
 </head>
+
 <body>
-    <form id="survey-form">
-        <h2>- Gestiona tus Encuestas-</h2>
+    <form id="survey-admin">
+        <h2>- ENCUESTAS-</h2>
 
-        <div class="mod-usuarios">
-            <label for="pseudo">Modulo Usuarios</label>
-            
-            <input type="submit" id="submit" value="LISTAR ENCUESTAS">
-            
-            <span class="clear">x</span>
+        <div class="mod-container">
+
+            <div class="mod-encuestas">
+                <label for="pseudo">Bienvenido!</label>
+
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="redirectTo('http://localhost:8080/admusuarios')">
+                    <p class="mb-0">MIS ENCUESTAS</p>
+                </div>
+
+                
+
+                <span class="clear">x</span>
+            </div>
+
         </div>
 
-        <div class="salir">
-            
-            
-            <input type="submit" id="submit" value="SALIR">
-            
-            <span class="clear">x</span>
+        <div class="button-container">
+                        
+            <!-- Botón SALIR -->
+            <a href="http://localhost:8080/home" class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
+                <p class="mb-0">SALIR</p>
+            </a>
         </div>
-
-        
         
     </form>
 
-   
-
     
-    <script src="test.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

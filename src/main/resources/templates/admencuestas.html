@@ -17,49 +17,57 @@
         <h2>- ADMIN-</h2>
 
         <div class="mod-container">
-            
+
 
             <div class="mod-encuestas">
-                <label for="pseudo">ADMINISTRAR</label>
+                <label for="pseudo">GESTIONAR ENCUESTAS</label>
 
                 <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <p class="mb-0">ENCUESTA</p>
+                    <p class="mb-0">CREAR</p>
                 </div>
 
                 <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <p class="mb-0">USUARIOS</p>
+                    <p class="mb-0">BUSCAR</p>
                 </div>
 
                 <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <p class="mb-0">PREGUNTAS</p>
+                    <p class="mb-0">ACTUALIZAR</p>
                 </div>
 
                 <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <p class="mb-0">CAPITULOS</p>
+                    <p class="mb-0">ELIMINAR</p>
                 </div>
 
 
                 <span class="clear">x</span>
             </div>
 
-            
+
         </div>
 
-        <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
-            data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <p class="mb-0">SALIR</p>
-            <span class="clear">x</span>
+        <div class="button-container">
+            <!-- Botón REGRESAR -->
+            <a href="http://localhost:8080/admin" class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
+                <p class="mb-0">REGRESAR</p>
+            </a>
+            
+            <!-- Botón SALIR -->
+            <a href="http://localhost:8080/home" class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
+                <p class="mb-0">SALIR</p>
+            </a>
+        </div>
+        
+
+
         </div>
 
     </form>
 
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
