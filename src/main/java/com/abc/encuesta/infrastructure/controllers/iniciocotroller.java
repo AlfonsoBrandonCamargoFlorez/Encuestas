@@ -24,6 +24,32 @@ public class iniciocotroller {
         return "usersenc.html";
     }
 
+    @GetMapping("/admcapitulos")
+    public String capitulos(Model model){
+        return "admcapitulos.html";
+    }
+
+    @GetMapping("/admpreguntas")
+    public String preguntas(Model model){
+        return "admpreguntas.html";
+    }
+
+    @GetMapping("/admencuestas")
+    public String encuesta(Model model){
+        return "encuestas.html";
+    }
+
+    @GetMapping("/admroles")
+    public String roles(Model model){
+        return "admroles.html";
+    }
+
+    @GetMapping("/admusuarios")
+    public String usuarios(Model model){
+        return "admusuarios.html";
+    }
+
+    
     
 
 
