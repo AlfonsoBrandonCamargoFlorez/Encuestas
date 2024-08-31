@@ -20,10 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         console.log('Usuario creado:', data);
-        // Aquí puedes cerrar el modal o mostrar un mensaje
+        alert('Usuario creado con éxito');
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('Error al crear usuario');
       })
       .finally(() => {
         submitButton.disabled = false;
@@ -40,13 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(`/api/users/${encodeURIComponent(data.get('id'))}`, {
       method: 'GET'
     })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Usuario encontrado:', data);
-        // Aquí puedes mostrar los datos del usuario o manejar la respuesta
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al buscar usuario');
+        }
+        return response.json();
+      })
+      .then(userData => {
+        console.log('Usuario encontrado:', userData);
+        // Mostrar los datos del usuario en el HTML
+        document.getElementById('userId').textContent = userData.id || 'No disponible';
+        document.getElementById('userName').textContent = userData.username || 'No disponible';
+        document.getElementById('userEnabled').textContent = userData.enabled ? 'Sí' : 'No';
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('Error al buscar usuario');
       })
       .finally(() => {
         submitButton.disabled = false;
@@ -74,10 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => response.json())
       .then(data => {
         console.log('Usuario actualizado:', data);
-        // Aquí puedes cerrar el modal o mostrar un mensaje
+        alert('Usuario actualizado con éxito');
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('Error al actualizar usuario');
       })
       .finally(() => {
         submitButton.disabled = false;
@@ -97,12 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(response => {
         if (response.ok) {
           console.log('Usuario eliminado');
+          alert('Usuario eliminado con éxito');
         } else {
-          console.error('Error al eliminar usuario');
+          throw new Error('Error al eliminar usuario');
         }
       })
       .catch(error => {
         console.error('Error:', error);
+        alert('Error al eliminar usuario');
       })
       .finally(() => {
         submitButton.disabled = false;

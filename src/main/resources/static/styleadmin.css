@@ -173,3 +173,71 @@ input[type="submit"]:hover {
     padding: 10px 0; /* Ajuste del relleno interno para tamaños más pequeños */
   }
 }
+
+
+/* ESTILOS MODAL*/
+/* Estilo general del modal */
+.modal-content {
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  background: #fff; /* Fondo blanco */
+}
+
+/* Estilo del encabezado del modal */
+.modal-header {
+  border-bottom: 1px solid #dee2e6; /* Borde inferior gris claro */
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+/* Estilo del título del modal */
+.modal-title {
+  font-size: 1.25rem; /* Tamaño de fuente mayor */
+  font-weight: 600; /* Fuente en negrita */
+  color: #343a40; /* Color del texto del título */
+}
+
+/* Estilo del botón de cierre del modal */
+.btn-close {
+  background: none; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 1.25rem; /* Tamaño de fuente mayor */
+  color: #343a40; /* Color del icono de cierre */
+}
+
+/* Estilo del cuerpo del modal */
+.modal-body {
+  padding: 2rem; /* Espacio interno mayor */
+  color: #495057; /* Color del texto */
+}
+
+/* Estilo del pie del modal */
+.modal-footer {
+  border-top: 1px solid #dee2e6; /* Borde superior gris claro */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+/* Estilo de los botones dentro del modal */
+.modal-footer .btn {
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  padding: 0.5rem 1rem; /* Relleno de botones */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Estilo del botón cancelar */
+.modal-footer .btn-secondary {
+  background-color: #6c757d; /* Fondo gris oscuro */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilo del botón principal */
+.modal-footer .btn-primary {
+  background-color: #007bff; /* Fondo azul */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilo del botón principal al pasar el ratón sobre él */
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Fondo azul oscuro */
+}
