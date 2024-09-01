@@ -43,9 +43,9 @@ public class Questions {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String question_text;
 
-    @OneToMany(mappedBy = "questions", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private Set<ResponseQuestion> responseQuestions;
+    // @OneToMany(mappedBy = "questions", cascade = CascadeType.ALL, orphanRemoval = true)
+    // @JsonIgnore
+    // private Set<ResponseQuestion> responseQuestions;
 
     @OneToMany(mappedBy = "questions", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore

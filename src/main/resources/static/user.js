@@ -65,40 +65,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (updateUserForm) {
-        updateUserForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const formData = new FormData(updateUserForm);
-            const data = Object.fromEntries(formData.entries());
-            const userId = data.id;
+if (updateUserForm) {
+    updateUserForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(updateUserForm);
+        const data = Object.fromEntries(formData.entries());
+        const userId = data.id;
 
-            fetch(`/api/users/${userId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: data.username,
-                    password: data.password,
-                    enabled: data.enabled === 'true', // Convertir a Booleano
-                }),
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Usuario actualizado con éxito');
-                        updateUserForm.reset();
-                        const modal = bootstrap.Modal.getInstance(document.getElementById('updateModal'));
-                        if (modal) modal.hide();
-                    } else {
-                        alert('Error al actualizar usuario');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error de red');
-                });
+        // Convertir roles seleccionados en un array de IDs
+        const roles = Array.from(updateUserForm.querySelector('#updateRoles').selectedOptions).map(option => option.value);
+
+        fetch(`/api/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: data.username,
+                password: data.password,
+                enabled: data.enabled === 'true', // Convertir a Booleano
+                roles: roles // Enviar roles seleccionados
+            }),
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Usuario actualizado con éxito');
+                updateUserForm.reset();
+                const modal = bootstrap.Modal.getInstance(document.getElementById('updateModal'));
+                if (modal) modal.hide();
+            } else {
+                alert('Error al actualizar usuario');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error de red');
         });
-    }
+    });
+}
+    
 
     if (deleteUserForm) {
         deleteUserForm.addEventListener('submit', (event) => {

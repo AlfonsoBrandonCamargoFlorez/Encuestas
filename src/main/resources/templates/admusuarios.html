@@ -109,44 +109,53 @@
         </div>
     </div>
 
-    <!-- Modal Actualizar -->
-    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="updateModalLabel">Actualizar Usuario</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="updateUserForm">
-                        <div class="mb-3">
-                            <label for="updateId" class="col-form-label">ID del Usuario:</label>
-                            <input type="text" id="updateId" name="id" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateUsername" class="col-form-label">Nuevo Nombre de Usuario:</label>
-                            <input type="text" id="updateUsername" name="username" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="updatePassword" class="col-form-label">Nueva Contraseña:</label>
-                            <input type="password" id="updatePassword" name="password" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="updateEnabled" class="col-form-label">Habilitado:</label>
-                            <select id="updateEnabled" name="enabled" class="form-control" required>
-                                <option value="true">Sí</option>
-                                <option value="false">No</option>
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
-                        </div>
-                    </form>
-                </div>
+<!-- Modal Actualizar -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="updateModalLabel">Actualizar Usuario</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateUserForm">
+                    <div class="mb-3">
+                        <label for="updateId" class="col-form-label">ID del Usuario:</label>
+                        <input type="text" id="updateId" name="id" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateUsername" class="col-form-label">Nuevo Nombre de Usuario:</label>
+                        <input type="text" id="updateUsername" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updatePassword" class="col-form-label">Nueva Contraseña:</label>
+                        <input type="password" id="updatePassword" name="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateEnabled" class="col-form-label">Habilitado:</label>
+                        <select id="updateEnabled" name="enabled" class="form-control" required>
+                            <option value="true">Sí</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="updateRoles" class="col-form-label">Rol:</label>
+                        <select id="updateRoles" name="roles" class="form-control" required>
+                            <!-- Opciones de roles deberían cargarse dinámicamente -->
+                            <option value="1">Admin</option>
+                            <option value="2">Usuario</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
+
     <!-- Modal Eliminar -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
