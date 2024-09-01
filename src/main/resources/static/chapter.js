@@ -7,7 +7,7 @@ $(document).ready(function () {
             number: $('#chapter_number').val(),
             surveyId: $('#surveys_id').val()
         };
-        $.post('/api/chapters', chapterData, function (response) {
+        $.post('/api/chapter', chapterData, function (response) {
             alert('Capítulo creado exitosamente.');
             $('#createModal').modal('hide');
         }).fail(function () {
@@ -19,12 +19,14 @@ $(document).ready(function () {
     $('#searchChapterForm').on('submit', function (e) {
         e.preventDefault();
         const chapterId = $('#searchId').val();
-        $.get(`/api/chapters/${chapterId}`, function (response) {
-            $('#chapterId').text(response.id);
-            $('#chapterTitle').text(response.title);
-            $('#chapterNumber').text(response.number);
-            $('#surveysId').text(response.surveyId);
-            $('#searchModal').modal('hide');
+        $.get(`/api/chapter/${chapterId}`, function (response) {
+            // Asegúrate de que los nombres de las propiedades coincidan con los nombres en la respuesta del backend
+            $('#chapterId').text(response.id || 'No disponible');
+            $('#chapterTitle').text(response.chapter_title || 'No disponible');
+            $('#chapterNumber').text(response.chapter_number || 'No disponible');
+            $('#surveysId').text(response.surveys ? response.surveys.id : 'No disponible'); // Si surveys es un objeto
+            $('#surveysName').text(response.surveys ? response.surveys.name : 'No disponible'); // Nombre de la encuesta
+            $('#chapterDetails').removeClass('d-none');
         }).fail(function () {
             alert('Capítulo no encontrado.');
         });
@@ -40,7 +42,7 @@ $(document).ready(function () {
             surveyId: $('#update_surveys_id').val()
         };
         $.ajax({
-            url: `/api/chapters/${chapterId}`,
+            url: `/api/chapter/${chapterId}`,
             type: 'PUT',
             data: updatedChapterData,
             success: function () {
@@ -58,7 +60,7 @@ $(document).ready(function () {
         e.preventDefault();
         const chapterId = $('#deleteId').val();
         $.ajax({
-            url: `/api/chapters/${chapterId}`,
+            url: `/api/chapter/${chapterId}`,
             type: 'DELETE',
             success: function () {
                 alert('Capítulo eliminado exitosamente.');
