@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +24,11 @@ public class ResponseQuestion {
     @ManyToOne
     private SubresponseOptions subResponseOptions;
 
-    @Column (columnDefinition = "VARCHAR(80)", nullable = false)
+    @Column(columnDefinition = "VARCHAR(80)", nullable = false)
     private String responsetext;
+
+    @ManyToOne
+    @JoinColumn(name = "questions_id", nullable = false) // Especificar columna de unión
+    private Questions questions;
 
 }
