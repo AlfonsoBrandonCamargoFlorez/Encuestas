@@ -43,7 +43,7 @@ public class ChapterAdapter implements IChapter {
                 .map(existingChapter -> {
                     // Mantener el createdAt existente
                     existingChapter.setChapter_title(chapter.getChapter_title());
-
+                    existingChapter.setSurveys(chapter.getSurveys());
                     // Actualizar el campo updatedAt en el audit
                     Audit audit = existingChapter.getAudit();
                     audit.setUpdatedAt(LocalDateTime.now());

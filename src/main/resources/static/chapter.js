@@ -102,14 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor ingresa un ID de capítulo para actualizar.');
             return;
         }
-        const formData = new FormData(event.target);
-        const updatedChapterData = {};
+        titulo = document.getElementById("update_chapter_title").value;
+        numero = document.getElementById("update_chapter_number").value;
+        encuesta = parseInt(document.getElementById("update_surveys_id").value);
 
-        for (let [key, value] of formData.entries()) {
-            updatedChapterData[key] = value;
-        }
 
-        console.log(updatedChapterData);
+
+
+        const chapterData = {
+            "chapter_title": titulo,
+            "chapter_number": numero,
+            surveys: { id: encuesta } // surveyId como objeto con una propiedad id
+        };
+        console.log(chapterData);
+
+     
 
         try {
             const response = await fetch(`/api/chapter/${chapterId}`, {
@@ -117,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(updatedChapterData)
+                body: JSON.stringify(chapterData)
             });
 
             if (response.ok) {

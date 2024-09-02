@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Usuarios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" th:href="@{/styleadmin.css}"> <!-- Incluye el nuevo CSS -->
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styleadmin.css"> <!-- Incluye el nuevo CSS -->
 </head>
 
 <body>
@@ -18,20 +16,16 @@
         <div class="mod-container">
             <div class="mod-encuestas">
                 <label for="pseudo">GESTIONAR USUARIOS</label>
-                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
-                    data-bs-toggle="modal" data-bs-target="#createModal">
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light" data-bs-toggle="modal" data-bs-target="#createModal">
                     <p class="mb-0">CREAR</p>
                 </div>
-                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
-                    data-bs-toggle="modal" data-bs-target="#searchModal">
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light" data-bs-toggle="modal" data-bs-target="#searchModal">
                     <p class="mb-0">BUSCAR</p>
                 </div>
-                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
-                    data-bs-toggle="modal" data-bs-target="#updateModal">
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light" data-bs-toggle="modal" data-bs-target="#updateModal">
                     <p class="mb-0">ACTUALIZAR</p>
                 </div>
-                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light"
-                    data-bs-toggle="modal" data-bs-target="#deleteModal">
+                <div class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     <p class="mb-0">ELIMINAR</p>
                 </div>
                 <span class="clear">x</span>
@@ -39,13 +33,11 @@
         </div>
         <div class="button-container">
             <!-- Botón REGRESAR -->
-            <a href="http://localhost:8080/admin"
-                class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
+            <a href="http://localhost:8080/admin" class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
                 <p class="mb-0">REGRESAR</p>
             </a>
             <!-- Botón SALIR -->
-            <a href="http://localhost:8080/home"
-                class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
+            <a href="http://localhost:8080/home" class="service-item d-flex justify-content-center align-items-center p-3 shadow-sm bg-light">
                 <p class="mb-0">SALIR</p>
             </a>
         </div>
@@ -124,26 +116,24 @@
                             <input type="text" id="updateId" name="id" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="updateUsername" class="col-form-label">Nuevo Nombre de Usuario:</label>
+                            <label for="updateUsername" class="form-label">Nombre de Usuario:</label>
                             <input type="text" id="updateUsername" name="username" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="updatePassword" class="col-form-label">Nueva Contraseña:</label>
-                            <input type="password" id="updatePassword" name="password" class="form-control">
+                            <label for="updatePassword" class="form-label">Contraseña:</label>
+                            <input type="password" id="updatePassword" name="password" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label for="updateEnabled" class="col-form-label">Habilitado:</label>
-                            <select id="updateEnabled" name="enabled" class="form-control" required>
+                            <label for="updateEnabled" class="form-label">Habilitado:</label>
+                            <select id="updateEnabled" name="enabled" class="form-select">
                                 <option value="true">Sí</option>
                                 <option value="false">No</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="updateRoles" class="col-form-label">Rol:</label>
-                            <select id="updateRoles" name="roles" class="form-control" required>
-                                <!-- Opciones de roles deberían cargarse dinámicamente -->
-                                <option value="1">Admin</option>
-                                <option value="2">Usuario</option>
+                            <label for="updateRoles" class="form-label">Rol:</label>
+                            <select id="updateRoles" name="roles" class="form-select" list>
+                                <!-- Opciones de roles serán añadidas aquí dinámicamente -->
                             </select>
                         </div>
                         <div class="modal-footer">
@@ -180,9 +170,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="user.js"></script>
 </body>
 
