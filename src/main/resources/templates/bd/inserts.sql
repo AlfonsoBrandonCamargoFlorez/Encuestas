@@ -82,12 +82,12 @@ INSERT INTO subresponse_options (component_html, subresponse_text, response_opti
     ('sub10', 'Subrespuesta 10', 5, NOW(), NOW());
 
 -- Insertar datos en `survey_json`
-INSERT INTO survey_json (surveys_id, payload, create_at, updated_at) VALUES
-    (1, '{"questions":[{"id":1,"text":"¿Cómo calificaría el servicio?"},{"id":2,"text":"¿Qué producto utilizó?"}]}', NOW(), NOW()),
-    (2, '{"questions":[{"id":3,"text":"¿Cómo califica la calidad del producto?"},{"id":4,"text":"¿Está satisfecho con el producto?"}]}', NOW(), NOW()),
-    (3, '{"questions":[{"id":5,"text":"¿Cómo califica el ambiente laboral?"},{"id":6,"text":"¿Cómo califica la comunicación en el trabajo?"}]}', NOW(), NOW()),
-    (4, '{"questions":[{"id":7,"text":"¿Cómo califica el tiempo de respuesta del soporte?"},{"id":8,"text":"¿Cómo califica el valor por dinero del producto?"}]}', NOW(), NOW()),
-    (5, '{"questions":[{"id":9,"text":"¿Cómo califica la facilidad de uso del producto?"},{"id":10,"text":"¿Recomendaría este producto a otros?"}]}', NOW(), NOW());
+-- INSERT INTO survey_json (surveys_id, payload, create_at, updated_at) VALUES
+--     (1, '{"questions":[{"id":1,"text":"¿Cómo calificaría el servicio?"},{"id":2,"text":"¿Qué producto utilizó?"}]}', NOW(), NOW()),
+--     (2, '{"questions":[{"id":3,"text":"¿Cómo califica la calidad del producto?"},{"id":4,"text":"¿Está satisfecho con el producto?"}]}', NOW(), NOW()),
+--     (3, '{"questions":[{"id":5,"text":"¿Cómo califica el ambiente laboral?"},{"id":6,"text":"¿Cómo califica la comunicación en el trabajo?"}]}', NOW(), NOW()),
+--     (4, '{"questions":[{"id":7,"text":"¿Cómo califica el tiempo de respuesta del soporte?"},{"id":8,"text":"¿Cómo califica el valor por dinero del producto?"}]}', NOW(), NOW()),
+--     (5, '{"questions":[{"id":9,"text":"¿Cómo califica la facilidad de uso del producto?"},{"id":10,"text":"¿Recomendaría este producto a otros?"}]}', NOW(), NOW());
 
 -- Insertar datos en `users`
 INSERT INTO users (username, password, enabled) VALUES
