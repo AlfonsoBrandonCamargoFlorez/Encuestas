@@ -161,6 +161,10 @@ async function listChapters() {
                     <td>${chapter.chapter_number}</td>
                     <td>${chapter.surveys ? chapter.surveys.id : 'No disponible'}</td>
                     <td>${chapter.surveys ? chapter.surveys.name : 'No disponible'}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm me-2" onclick="openEditModal(${chapter.id})">Actualizar</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteChapter(${chapter.id})">Eliminar</button>
+                    </td>
                 `;
                 chaptersList.appendChild(row);
             });
@@ -171,6 +175,45 @@ async function listChapters() {
         console.error('Error:', error);
         alert('Error de red');
     }
+}
+
+// Función para eliminar un capítulo
+async function deleteChapter(chapterId) {
+    if (confirm('¿Estás seguro de que deseas eliminar este capítulo?')) {
+        try {
+            const response = await fetch(`/api/chapter/${chapterId}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                alert('Capítulo eliminado exitosamente.');
+                listChapters(); // Actualiza la lista después de eliminar
+            } else {
+                alert('Error al eliminar el capítulo.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error de red');
+        }
+    }
+}
+
+// Función para abrir el modal de edición y prellenar el formulario
+function openEditModal(chapterId) {
+    fetch(`/api/chapter/${chapterId}`)
+        .then(response => response.json())
+        .then(chapter => {
+            document.getElementById('updateId').value = chapter.id;
+            document.getElementById('update_chapter_title').value = chapter.chapter_title;
+            document.getElementById('update_chapter_number').value = chapter.chapter_number;
+            document.getElementById('update_surveys_id').value = chapter.surveys ? chapter.surveys.id : '';
+            const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
+            updateModal.show();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al obtener datos del capítulo.');
+        });
 }
 
 // Carga la lista de capítulos cuando se abre el modal
