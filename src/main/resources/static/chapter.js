@@ -141,3 +141,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Función para listar todos los capítulos
+async function listChapters() {
+    try {
+        const response = await fetch('/api/chapter');
+        if (response.ok) {
+            const chapters = await response.json();
+            const chaptersList = document.getElementById('chaptersList');
+
+            // Limpia la tabla antes de agregar los nuevos datos
+            chaptersList.innerHTML = '';
+
+            chapters.forEach(chapter => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${chapter.id}</td>
+                    <td>${chapter.chapter_title}</td>
+                    <td>${chapter.chapter_number}</td>
+                    <td>${chapter.surveys ? chapter.surveys.id : 'No disponible'}</td>
+                    <td>${chapter.surveys ? chapter.surveys.name : 'No disponible'}</td>
+                `;
+                chaptersList.appendChild(row);
+            });
+        } else {
+            alert('Error al cargar la lista de capítulos.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error de red');
+    }
+}
+
+// Carga la lista de capítulos cuando se abre el modal
+document.getElementById('listModal').addEventListener('shown.bs.modal', () => {
+    listChapters();
+});
