@@ -95,23 +95,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('updateQuestionForm').addEventListener('submit', async (event) => {
         event.preventDefault();
 
-        const questionId = document.getElementById('updateId').value;
+        const questionId = document.getElementById('updateId') ? document.getElementById('updateId').value : null;
         if (!questionId) {
             alert('Por favor ingresa un ID de pregunta para actualizar.');
             return;
         }
-        const number = document.getElementById("update_question_number").value;
-        const type = document.getElementById("update_response_type").value;
-        const text = document.getElementById("update_question_text").value;
-        const comment = document.getElementById("update_comment_question").value;
-        const chapterId = parseInt(document.getElementById("update_chapter_id").value);
+        const number = document.getElementById("update_question_number") ? document.getElementById("update_question_number").value : '';
+        const type = document.getElementById("update_response_type") ? document.getElementById("update_response_type").value : '';
+        const text = document.getElementById("update_question_text") ? document.getElementById("update_question_text").value : '';
+        const comment = document.getElementById("update_comment_question") ? document.getElementById("update_comment_question").value : '';
+        const chapterId = document.getElementById("update_chapter_id") ? parseInt(document.getElementById("update_chapter_id").value) : null;
 
         const questionData = {
             "question_number": number,
             "response_type": type,
             "question_text": text,
             "comment_question": comment,
-            "chapter": { "id": chapterId } // chapterId como objeto con una propiedad id
+            "chapter": { "id": chapterId }
         };
         console.log(questionData);
 
@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.hide();
                 listQuestions(); // Actualiza la lista después de actualizar una pregunta
             } else {
-                alert('Error al actualizar la pregunta.');
+                const errorText = await response.text(); // Obtener texto del error
+                alert(`Error al actualizar la pregunta: ${errorText}`);
             }
         } catch (error) {
             console.error('Error:', error);
