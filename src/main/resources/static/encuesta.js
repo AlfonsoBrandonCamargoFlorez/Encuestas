@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchSurveyForm = document.getElementById('searchSurveyForm');
     const updateSurveyForm = document.getElementById('updateSurveyForm');
     const deleteSurveyForm = document.getElementById('deleteSurveyForm');
+    const surveyListContainer = document.getElementById('surveyList');
 
     if (createSurveyForm) {
         createSurveyForm.addEventListener('submit', async (event) => {
@@ -116,4 +117,62 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Funcionalidad para listar encuestas
+    document.querySelector('[data-bs-target="#listModal"]').addEventListener('click', async () => {
+        try {
+            const response = await fetch('/api/surveys');
+            if (response.ok) {
+                const surveys = await response.json();
+                if (surveys.length === 0) {
+                    surveyListContainer.innerHTML = '<p>No hay encuestas disponibles.</p>';
+                } else {
+                    const listHtml = surveys.map(survey => `
+                        <div class="survey-item mb-3">
+                            <p><strong>ID:</strong> ${survey.id}</p>
+                            <p><strong>Nombre:</strong> ${survey.name}</p>
+                            <p><strong>Descripción:</strong> ${survey.description}</p>
+                            <button class="btn btn-primary btn-sm me-2" data-action="update" data-id="${survey.id}">Actualizar</button>
+                            <button class="btn btn-danger btn-sm" data-action="delete" data-id="${survey.id}">Eliminar</button>
+                            <hr>
+                        </div>
+                    `).join('');
+                    surveyListContainer.innerHTML = listHtml;
+                }
+            } else {
+                surveyListContainer.innerHTML = '<p>Error al cargar encuestas.</p>';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            surveyListContainer.innerHTML = '<p>Error de red.</p>';
+        }
+    });
+
+    // Manejo de clics en los botones de actualizar y eliminar en el modal de listar
+    surveyListContainer.addEventListener('click', async (event) => {
+        const button = event.target;
+        if (button.tagName === 'BUTTON') {
+            const action = button.getAttribute('data-action');
+            const surveyId = button.getAttribute('data-id');
+
+            if (action === 'update') {
+                // Rellenar el formulario de actualización con los datos de la encuesta
+                const response = await fetch(`/api/surveys/${surveyId}`);
+                if (response.ok) {
+                    const survey = await response.json();
+                    document.getElementById('updateId').value = survey.id;
+                    document.getElementById('updateName').value = survey.name;
+                    document.getElementById('updateDescription').value = survey.description;
+                    const updateModal = new bootstrap.Modal(document.getElementById('updateModal'));
+                    updateModal.show();
+                } else {
+                    alert('Error al cargar datos de la encuesta');
+                }
+            } else if (action === 'delete') {
+                document.getElementById('deleteId').value = surveyId;
+                const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+                deleteModal.show();
+            }
+        }
+    });
 });
