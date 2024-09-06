@@ -1,0 +1,243 @@
+/* Reset de márgenes y rellenos para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Aumentar el tamaño de la fuente para el texto "GESTIONAR CAPÍTULOS" */
+.mod-encuestas label {
+  font-size: 24px; /* Ajusta el tamaño de la fuente según sea necesario */
+  font-weight: bold; /* Asegura que el texto sea en negrita */
+}
+
+/* Estilo general del cuerpo de la página */
+body {
+  font-family: Arial, sans-serif; /* Fuente de la página */
+  background: linear-gradient(to top left, #cc95c0, #dbd4b4, #7aa1d2); /* Fondo degradado */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+}
+
+/* Estilo para los botones de servicio (CREAR, BUSCAR, ACTUALIZAR, ELIMINAR) */
+.service-item {
+  border: 1px solid rgba(93, 92, 92, 0.614); /* Borde gris */
+  border-radius: 30px; /* Bordes redondeados más pequeños */
+  font-size: 16px; /* Tamaño de la fuente aumentado */
+  padding: 12px 0; /* Relleno interno aumentado verticalmente */
+  width: 190px; /* Ancho fijo del botón */
+  text-align: center; /* Centra el texto dentro del botón */
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+  display: flex; /* Usa flex para centrar el texto verticalmente */
+  align-items: center; /* Alinea el texto verticalmente en el centro */
+  justify-content: center; /* Centra el texto horizontalmente */
+}
+
+/* Estilo para el hover de los botones de servicio */
+.service-item:hover {
+  background-color: #6e6c6c; /* Fondo gris claro */
+  color: rgb(18, 189, 41); /* Color del texto blanco */
+}
+
+/* Estilo para el formulario principal */
+form {
+  background: rgba(256, 256, 256, 0.4); /* Fondo semi-transparente */
+  color: #666; /* Color del texto */
+  min-width: 600px; /* Ancho mínimo del formulario */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3); /* Sombra */
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Espacio entre los módulos */
+}
+
+/* Estilo para el título principal */
+h2 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* Contenedor para los módulos de usuario y encuestas */
+.mod-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1px; /* Espacio entre columnas */
+}
+
+/* Estilo para los módulos dentro del contenedor */
+.mod-usuarios, .mod-encuestas {
+  flex: 1;
+  background: transparent; /* Fondo transparente */
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Estilo para las etiquetas en los formularios */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center; /* Centra el texto de las etiquetas */
+}
+
+/* Estilo para los botones de tipo submit */
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  height: 40px; /* Altura del botón */
+  margin: 10px 0; /* Espacio entre botones */
+  padding: 0; /* Sin relleno interno */
+  border: 1px solid #666; /* Borde gris */
+  border-radius: 20px; /* Bordes redondeados */
+  background: rgba(256, 256, 256, 0.8); /* Fondo blanco semitransparente */
+  font-size: 14px; /* Tamaño de la fuente */
+  color: #666; /* Color del texto */
+  cursor: pointer; /* Cursor tipo mano */
+  text-align: center; /* Centra el texto */
+  line-height: 40px; /* Alinea verticalmente el texto */
+  transition: color 0.4s, background 0.4s; /* Transición suave */
+}
+
+/* Estilo del botón de submit al pasar el ratón sobre él */
+input[type="submit"]:hover {
+  background: #666; /* Fondo gris oscuro */
+  color: white; /* Color del texto blanco */
+}
+
+/* Estilo para el botón de cierre (x) */
+.clear {
+  position: absolute;
+  top: 24px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  display: none; /* Oculto por defecto */
+}
+
+/* Estilo del botón de cierre al pasar el ratón sobre él */
+.clear:hover {
+  font-weight: bold;
+}
+
+/* Estilo para el contenedor de botones dentro de .mod-encuestas */
+.mod-encuestas {
+  display: flex;
+  flex-direction: column; /* Botones en columna */
+  align-items: center; /* Centra los botones horizontalmente */
+  gap: 10px; /* Espacio entre botones */
+}
+
+/* Estilo del contenedor de botones para la parte inferior */
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se ajusten en varias filas */
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 10px; /* Espacio entre los botones */
+  margin-top: 20px; /* Espacio superior del contenedor */
+}
+
+.button-container .service-item {
+  flex: 0 1 150px; /* Ancho fijo para los botones */
+  text-align: center; /* Centra el texto dentro del botón */
+  border-radius: 25px; /* Bordes redondeados más pequeños */
+  font-size: 16px; /* Tamaño de la fuente aumentado */
+  padding: 12px 0; /* Relleno interno aumentado verticalmente */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+/* Elimina subrayado y asegura que el color del texto de los enlaces sea el mismo que el del botón */
+.button-container a {
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: inherit; /* Hereda el color del elemento padre */
+}
+
+/* Estilo para el hover de los botones dentro de button-container */
+.button-container .service-item:hover {
+  background-color: #6a6969; /* Fondo gris claro */
+  color: rgb(241, 81, 81); /* Color del texto blanco */
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column; /* Botones en columna en pantallas pequeñas */
+    gap: 10px; /* Espacio entre los botones en columna */
+  }
+
+  .button-container .service-item {
+    width: 100%; /* Botones ocupan todo el ancho en pantallas pequeñas */
+    padding: 10px 0; /* Ajuste del relleno interno para tamaños más pequeños */
+  }
+}
+
+
+/* ESTILOS MODAL*/
+/* Estilo general del modal */
+.modal-content {
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+  background: #fff; /* Fondo blanco */
+}
+
+/* Estilo del encabezado del modal */
+.modal-header {
+  border-bottom: 1px solid #dee2e6; /* Borde inferior gris claro */
+  background-color: #f8f9fa; /* Fondo gris claro */
+}
+
+/* Estilo del título del modal */
+.modal-title {
+  font-size: 1.25rem; /* Tamaño de fuente mayor */
+  font-weight: 600; /* Fuente en negrita */
+  color: #343a40; /* Color del texto del título */
+}
+
+/* Estilo del botón de cierre del modal */
+.btn-close {
+  background: none; /* Fondo transparente */
+  border: none; /* Sin borde */
+  font-size: 1.25rem; /* Tamaño de fuente mayor */
+  color: #343a40; /* Color del icono de cierre */
+}
+
+/* Estilo del cuerpo del modal */
+.modal-body {
+  padding: 2rem; /* Espacio interno mayor */
+  color: #495057; /* Color del texto */
+}
+
+/* Estilo del pie del modal */
+.modal-footer {
+  border-top: 1px solid #dee2e6; /* Borde superior gris claro */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+}
+
+/* Estilo de los botones dentro del modal */
+.modal-footer .btn {
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  padding: 0.5rem 1rem; /* Relleno de botones */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Estilo del botón cancelar */
+.modal-footer .btn-secondary {
+  background-color: #6c757d; /* Fondo gris oscuro */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilo del botón principal */
+.modal-footer .btn-primary {
+  background-color: #007bff; /* Fondo azul */
+  color: #fff; /* Color del texto blanco */
+}
+
+/* Estilo del botón principal al pasar el ratón sobre él */
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Fondo azul oscuro */
+}
