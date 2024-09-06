@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loggin</title>
-    <link rel="stylesheet" th:href="@{/style.css}">
-    <script src="test.js" th:src="@{/test.js}" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+        <script src="test.js" th:src="@{/test.js}" defer></script>
 </head>
 <body>
-    <form id="survey-form">
+    <form method="post" action="/login">
         <h2>- www.Encuestas.com-</h2>
 
         <div class="input-wrap">
             <label for="pseudo">Usuario</label>
-            <input type="text" id="pseudo" placeholder="Escribe tu Usuario" required>
+            <input  type="text" id="username" name="username" placeholder="Escribe tu Usuario" required>
             <span class="clear">x</span>
         </div>
 
@@ -21,14 +21,13 @@
 
         <div class="input-wrap">
             <label for="password">Contraseña</label>
-            <input type="password" id="password" placeholder="Escribe tu Contraseña" required>
+            <input type="password" id="password" name="password" placeholder="Escribe tu Contraseña" required>
             <span class="clear">x</span>
         </div>
 
-        <input type="submit" id="submit" value="INGRESAR">
-    </form>
+        <input type="submit" id="submit" value="INGRESAR">    </form>
 
     
-    <script src="test.js"></script>
+    <script src="/js/test.js"></script>
 </body>
 </html>

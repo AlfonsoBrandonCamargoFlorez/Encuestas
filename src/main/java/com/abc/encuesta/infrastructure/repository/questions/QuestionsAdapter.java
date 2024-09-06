@@ -45,6 +45,9 @@ public class QuestionsAdapter implements IQuestions {
                     // Mantener el createdAt existente
                     existingQuestion.setQuestion_text(question.getQuestion_text());
                     existingQuestion.setChapter(question.getChapter());
+                    existingQuestion.setQuestion_number(question.getQuestion_number());
+                    existingQuestion.setResponse_type(question.getResponse_type());
+                    existingQuestion.setComment_question(question.getComment_question());
                     // Actualizar el campo updatedAt en el audit
                     Audit audit = existingQuestion.getAudit();
                     audit.setUpdatedAt(LocalDateTime.now());

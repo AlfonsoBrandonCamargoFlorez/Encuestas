@@ -1,7 +1,4 @@
--- Insertar datos en `roles`
-INSERT INTO roles (name) VALUES
-    ('Administrador'),
-    ('Usuario');
+
 
 -- Insertar datos en `categories_catalog`
 INSERT INTO categories_catalog (name, create_at, updated_at) VALUES
@@ -88,29 +85,3 @@ INSERT INTO subresponse_options (component_html, subresponse_text, response_opti
 --     (3, '{"questions":[{"id":5,"text":"¿Cómo califica el ambiente laboral?"},{"id":6,"text":"¿Cómo califica la comunicación en el trabajo?"}]}', NOW(), NOW()),
 --     (4, '{"questions":[{"id":7,"text":"¿Cómo califica el tiempo de respuesta del soporte?"},{"id":8,"text":"¿Cómo califica el valor por dinero del producto?"}]}', NOW(), NOW()),
 --     (5, '{"questions":[{"id":9,"text":"¿Cómo califica la facilidad de uso del producto?"},{"id":10,"text":"¿Recomendaría este producto a otros?"}]}', NOW(), NOW());
-
--- Insertar datos en `users`
-INSERT INTO users (username, password, enabled) VALUES
-    ('admin', 'password123', TRUE),
-    ('user1', 'userpass456', TRUE),
-    ('admin2', 'password234', TRUE),
-    ('user2', 'userpass567', TRUE),
-    ('admin3', 'password345', TRUE),
-    ('user3', 'userpass678', TRUE),
-    ('admin4', 'password456', TRUE),
-    ('user4', 'userpass789', TRUE),
-    ('admin5', 'password567', TRUE),
-    ('user5', 'userpass890', TRUE);
-
--- Insertar datos en `users_roles`
-INSERT INTO users_roles (users_id, roles_id) VALUES
-    (1, 1),  -- admin
-    (2, 2),  -- user1
-    (3, 1),  -- admin2
-    (4, 2),  -- user2
-    (5, 1),  -- admin3
-    (6, 2),  -- user3
-    (7, 1),  -- admin4
-    (8, 2),  -- user4
-    (9, 1),  -- admin5
-    (10, 2); -- user5
